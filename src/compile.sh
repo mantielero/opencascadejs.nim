@@ -1,0 +1,1 @@
+nim js -d:nimExperimentalAsyncjsThen index
