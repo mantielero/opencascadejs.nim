@@ -1,4 +1,4 @@
-/* import {
+import {
   AmbientLight,
   DirectionalLight,
   PerspectiveCamera,
@@ -8,10 +8,11 @@
   Geometry,
   Mesh,
   MeshStandardMaterial,
-} from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import openCascadeHelper from '../../common/openCascadeHelper';
- */
+} from './three/build/three.js';//"https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js";//'three';
+//import * as THREE from 'three'
+import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+import openCascadeHelper from './openCascadeHelper.js';
+
 /* const loadFileAsync = (file) => {
   return new Promise((resolve, reject) => {
     let reader = new FileReader();
@@ -66,6 +67,7 @@ const loadSTEPorIGES = async (openCascade, inputFile, addFunction, scene) => {
 };
 export { loadSTEPorIGES }; */
 
+//const setupThreeJSViewport = 0
 
 const setupThreeJSViewport = () => {
   var scene = new Scene();
@@ -97,8 +99,8 @@ const setupThreeJSViewport = () => {
   animate();
   return scene;
 }
-/* export { setupThreeJSViewport };
-
+export { setupThreeJSViewport };
+/*
 const makeBottle = (openCascade, myWidth, myHeight, myThickness) => {
   // Profile : Define Support Points
   const aPnt1 = new openCascade.gp_Pnt_3(-myWidth / 2., 0, 0);

@@ -13,4 +13,4 @@ var Module=typeof Module!="undefined"?Module:{};var readyPromiseResolve,readyPro
 }
 );
 })();
-//export default Module;
+export default Module;

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">		
-		<script src="dist/polygon.js"></script>
-		<script src="dist/library.js"></script>
-		<script src="dist/opencascade.full.js"></script>	
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>	
+		<meta charset="utf-8">	
+		<!--script type="module" src="./dist/opencascade.full.js"></script-->
+		<script type="module" src="index.js"></script>	
 		<title>OpenCascade.js example</title>
 	</head>
 	<style>
@@ -24,5 +22,27 @@
 	<body>
 		<div id="viewport">
 		</div>
+		
 	</body>
 </html>
+
+
+<!--
+You are mixing ES6 module with non-module code which is not valid. Do it like so:
+
+<script type="module">
+
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js';
+
+import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/DRACOLoader.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
+
+// your actual app code
+
+// Configure decoder and create loader.
+const manager = new THREE.LoadingManager();
+const textureLoader = new THREE.TextureLoader(manager);
+
+</script>
+I suggest you convert your custom geometry_helper.js to a ES6 module, too.	
+-->
